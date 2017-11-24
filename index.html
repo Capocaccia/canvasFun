@@ -5,28 +5,21 @@
   <title>HTML5 Canvas</title>
 </head>
 <body>
-<button class="clear">Clear</button>
 
-<div class="pallet">
-  <div class="color-group">
-    <div class="color" data-color="#C0392B"></div>
-    <div class="color" data-color="#2980B9"></div>
-  </div>
-  <div class="color-group">
-    <div class="color" data-color="#F7DC6F"></div>
-    <div class="color" data-color="#27AE60"></div>
-  </div>
-  <div class="color-group">
-    <div class="color" data-color="#8E44AD"></div>
-    <div class="color" data-color="#F39C12"></div>
-  </div>
-  <div class="color-group">
-    <div class="color" data-color="#000"></div>
-    <div class="color" data-color="#808B96"></div>
-  </div>
-</div>
+  <div class="control-group">
+    <button class="clear">Clear</button>
+    
+    <div class="pallet">
+      <input class="color-picker" type="color">
+    </div>
 
-<input class="width-select" type="range" min="1" max="10">
+    <div class="width-select-group">
+        <div class="width-counter"></div>
+        <input class="width-select" type="range" min="0" max="10">
+    </div>
+  </div>
+
+
 
 <canvas id="draw" width="800" height="800"></canvas>
 
