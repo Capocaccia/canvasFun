@@ -6,17 +6,17 @@ const widthCounter = document.querySelector('.width-counter');
 const colorPicker = document.querySelector('.color-picker');
 var widthSelectValue = widthSelect.value * 5;
 
-widthSelect.addEventListener('change', function(){
+widthSelect.addEventListener('change', function() {
 	widthSelectValue = widthSelect.value * 5;
 	ctx.lineWidth = widthSelectValue;
 	widthCounter.innerHTML  = widthSelectValue / 5;
 });
 
-colorPicker.addEventListener('change', function(){
+colorPicker.addEventListener('change', function() {
 	ctx.strokeStyle = this.value;
 });
 
-clearButton.addEventListener('click', function(){
+clearButton.addEventListener('click', function() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
@@ -32,7 +32,7 @@ let lastX = 0;
 let lastY = 0;
 let hue = 0;
 
-function draw(e){
+const draw = (e) => {
 	if(!isDrawing) return;
 	ctx.beginPath();
 	ctx.moveTo(lastX, lastY);
@@ -51,14 +51,14 @@ canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
 
 // When the page loads, set the width counter value
-function setWidthCounterValue(){
+const setWidthCounterValue = () => {
 	widthCounter.innerHTML  = widthSelectValue / 5;
 }
 
 setWidthCounterValue();
 
 // When the page loads, thickness of line should match width counter value
-function setLineThickness(){
+const setLineThickness = () => {
 	ctx.lineWidth = widthSelectValue;
 }
 
