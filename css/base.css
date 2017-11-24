@@ -4,24 +4,44 @@ html, body {
 }
 
 .pallet {
-    border: 1px solid lightslategrey;
-    margin-left: 10px;
     margin-top: 10px;
     width: fit-content;
-    padding: 0 10px 10px 10px;
+    padding: 10px;
 }
 
-.color-group {
+.control-group {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    border: 1px solid #145A32;
+    box-sizing: border-box;
+    position: absolute;
     top: 0;
     left: 0;
+    padding: 10px;
+    margin: 10px;
 }
 
-
-.color-group > .color:last-child {
-    margin-left: 10px;
+.clear {
+    background: linear-gradient(red, yellow);
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 100%;
+    border-radius: 10px;
 }
 
-.color-group {
-    margin-top: 10px;
+.width-counter {
+    text-align: center;
+    font-size: 16px;
+    font-family: arial;
+}
+
+.width-select-group {
+    padding: 10px 0;
+}
+
+.color-picker {
+    border-radius: 10px;
 }
