@@ -1,23 +1,19 @@
 const canvas = document.querySelector('#draw');
 const ctx = canvas.getContext('2d');
 const clearButton = document.querySelector('.clear');
-const colors = document.querySelectorAll('.color');
 const widthSelect = document.querySelector('.width-select');
+const widthCounter = document.querySelector('.width-counter');
+const colorPicker = document.querySelector('.color-picker');
+var widthSelectValue = widthSelect.value * 5;
 
-widthSelect.addEventListener('click', function(){
-	ctx.lineWidth = widthSelect.value * 5;
+widthSelect.addEventListener('change', function(){
+	widthSelectValue = widthSelect.value * 5;
+	ctx.lineWidth = widthSelectValue;
+	widthCounter.innerHTML  = widthSelectValue / 5;
 });
 
-
-colors.forEach((color) => {
-	var currentColor = color.dataset.color;
-	color.style.width = '25px';
-	color.style.height = '25px';
-	color.style.backgroundColor = currentColor;
-
-	color.addEventListener('click', function(){
-		ctx.strokeStyle = currentColor;
-	});
+colorPicker.addEventListener('change', function(){
+	ctx.strokeStyle = this.value;
 });
 
 clearButton.addEventListener('click', function(){
@@ -45,8 +41,6 @@ function draw(e){
 	ctx.stroke();
 }
 
-
-
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', (e) => {
 	isDrawing = true;
@@ -55,3 +49,17 @@ canvas.addEventListener('mousedown', (e) => {
 
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
+
+// When the page loads, set the width counter value
+function setWidthCounterValue(){
+	widthCounter.innerHTML  = widthSelectValue / 5;
+}
+
+setWidthCounterValue();
+
+// When the page loads, thickness of line should match width counter value
+function setLineThickness(){
+	ctx.lineWidth = widthSelectValue;
+}
+
+setLineThickness();
