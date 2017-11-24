@@ -3,10 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>HTML5 Canvas</title>
-  <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
+<button class="clear">Clear</button>
+
+<div class="pallet">
+  <div class="color-group">
+    <div class="color" data-color="#C0392B"></div>
+    <div class="color" data-color="#2980B9"></div>
+  </div>
+  <div class="color-group">
+    <div class="color" data-color="#F7DC6F"></div>
+    <div class="color" data-color="#27AE60"></div>
+  </div>
+  <div class="color-group">
+    <div class="color" data-color="#8E44AD"></div>
+    <div class="color" data-color="#F39C12"></div>
+  </div>
+  <div class="color-group">
+    <div class="color" data-color="#000"></div>
+    <div class="color" data-color="#808B96"></div>
+  </div>
+</div>
+
+<input class="width-select" type="range" min="1" max="10">
+
 <canvas id="draw" width="800" height="800"></canvas>
+
+<link rel="stylesheet" href="css/base.css">
 
 <script src="js/index.js"></script>
 
