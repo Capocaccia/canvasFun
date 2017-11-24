@@ -1,3 +1,27 @@
-  html, body {
+html, body {
     margin:0;
-  }
+    position: relative;
+}
+
+.pallet {
+    border: 1px solid lightslategrey;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: fit-content;
+    padding: 0 10px 10px 10px;
+}
+
+.color-group {
+    display: flex;
+    top: 0;
+    left: 0;
+}
+
+
+.color-group > .color:last-child {
+    margin-left: 10px;
+}
+
+.color-group {
+    margin-top: 10px;
+}
