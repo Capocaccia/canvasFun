@@ -1,6 +1,8 @@
 html, body {
     margin:0;
     position: relative;
+    font-size: 16px;
+    font-family: arial;
 }
 
 .pallet {
@@ -20,22 +22,18 @@ html, body {
     top: 0;
     left: 0;
     padding: 10px;
-    margin: 10px;
 }
 
 .clear {
-    background: linear-gradient(red, yellow);
-    color: white;
-    font-size: 16px;
+    color: black;
     text-transform: uppercase;
     width: 100%;
     border-radius: 10px;
+    font-size: 16px;
 }
 
 .width-counter {
     text-align: center;
-    font-size: 16px;
-    font-family: arial;
 }
 
 .width-select-group {
@@ -44,4 +42,30 @@ html, body {
 
 .color-picker {
     border-radius: 10px;
+}
+
+.line-types {
+    text-align: center;
+    width: 100%;
+}
+
+.line-types-groups {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.line-type {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    padding: 10px 0;
+    box-sizing: border-box;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.line-type:hover {
+    cursor: pointer;
 }
