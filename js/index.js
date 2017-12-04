@@ -4,7 +4,17 @@ const clearButton = document.querySelector('.clear');
 const widthSelect = document.querySelector('.width-select');
 const widthCounter = document.querySelector('.width-counter');
 const colorPicker = document.querySelector('.color-picker');
+const lineTypes = document.querySelectorAll('.line-type');
+
 var widthSelectValue = widthSelect.value * 5;
+
+lineTypes.forEach((type) => {
+	type.addEventListener('click', (e) => {
+		ctx.lineJoin = e.target.innerText.toLowerCase();
+		ctx.lineCap = e.target.innerText.toLowerCase();
+	});
+});
+
 
 widthSelect.addEventListener('change', function() {
 	widthSelectValue = widthSelect.value * 5;
@@ -23,9 +33,8 @@ clearButton.addEventListener('click', function() {
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-ctx.strokeStyle = '#BADA55';
-ctx.lineJoin = 'round';
-ctx.lineCap = 'round';
+ctx.lineJoin = 'square';
+ctx.lineCap = 'square';
 
 let isDrawing = false;
 let lastX = 0;
@@ -52,7 +61,7 @@ canvas.addEventListener('mouseout', () => isDrawing = false);
 
 // When the page loads, set the width counter value
 const setWidthCounterValue = () => {
-	widthCounter.innerHTML  = widthSelectValue / 5;
+	widthCounter.innerHTML  = widthSelectValue / 6;
 }
 
 setWidthCounterValue();
