@@ -10,8 +10,8 @@ var widthSelectValue = widthSelect.value * 5;
 
 lineTypes.forEach((type) => {
 	type.addEventListener('click', (e) => {
-		ctx.lineJoin = e.target.innerText.toLowerCase();
-		ctx.lineCap = e.target.innerText.toLowerCase();
+		ctx.lineJoin = e.target.dataset.linetype;
+		ctx.lineCap = e.target.dataset.linetype;
 	});
 });
 
